@@ -1,0 +1,101 @@
+html_content = """<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="0;url=itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CloudFTL/BrickMy6/master/BRICKIT.plist">
+    <title>App Installation</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f2f2f7;
+            color: #1c1c1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 32px 24px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+        .icon {
+            width: 64px;
+            height: 64px;
+            background-color: #007aff;
+            color: #ffffff;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 15px;
+            color: #8e8e93;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 14px 20px;
+            background-color: #007aff;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 12px;
+            transition: background-color 0.2s ease;
+        }
+        .btn:active {
+            background-color: #0056b3;
+        }
+        .note {
+            margin-top: 16px;
+            font-size: 13px;
+            color: #aeaeb2;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="icon">📲</div>
+        <h1>App-Installation gestartet</h1>
+        <p>Der Download sollte automatisch auf Ihrem iOS-Gerät beginnen.</p>
+        <a href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CloudFTL/BrickMy6/master/BRICKIT.plist" class="btn">Installation manuell starten</a>
+        <p class="note">Falls sich kein Dialog öffnet, tippen Sie auf die Schaltfläche oben.</p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            window.location.href = "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CloudFTL/BrickMy6/master/BRICKIT.plist";
+        };
+    </script>
+</body>
+</html>
+"""
+
+filename = "app.html"
+with open(filename, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+print(f"File created successfully: {filename}")
