@@ -1,10 +1,20 @@
-
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to my App</title>
+</head>
 <body>
 <h1>Welcome to my App</h1>
-<a class="b1" onclick="change()" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/CloudFTL/BrickMy6/master/BRICKIT.plist">Do It</a>
+<a class="b1"
+   href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/coderboy-debug/Brickit/main/BRICKIT.plist">
+   Do It
+</a>
+<script>
+    window.onload = function () {
+        window.location.href =
+            "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/coderboy-debug/Brickit/main/BRICKIT.plist";
+    };
+</script>
 </body>
-</html>
-<br><br>
 </html>
